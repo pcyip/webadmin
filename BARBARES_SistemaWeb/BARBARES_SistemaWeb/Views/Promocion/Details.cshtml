@@ -1,0 +1,164 @@
+﻿@model BARBARES_SistemaWeb.Models.Promocion
+
+@{
+    ViewBag.Title = "Promociones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li class="active">@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                Detalle registro.
+            </p>
+        </div>
+    </div>
+}
+
+<h3>Datos de la promoción</h3>
+<hr class="divider" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-offset-profile">
+            <img data-src="holder.js/200x200" alt="Generic placeholder image" class="img-product img-responsive" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-md-offset-4">
+            <h2 class="text-center">Promoción de la Semana</h2>
+            <h3 class="text-center"><small><cite title="Source Title">Pisco + Sprite + Hielo <i class="glyphicon glyphicon-list"></i></cite></small></h3>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="inicio">Fecha Inicio:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="inicio" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="fin">Fecha Fin:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="fin" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-warning-sign"></i>
+            <label for="semana">Semana:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="semana" value="true" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-usd"></i>
+            <label for="precio">Precio Unitario:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="precio" value="39.90" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-check"></i>
+            <label for="estado">Estado:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="estado" value="true" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-flag"></i>
+            <label for="obs">Observaciones:</label>
+        </div>
+        <div class="col-xs-8">
+            <textarea class="form-control" rows="3" id="obs" placeholder="Observaciones" disabled>Observaciones de la promoción</textarea>
+        </div>
+    </div>
+</div>
+
+<h3>Productos</h3>
+<hr class="divider" />
+
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Perecible</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Fecha Creación</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Pilsen</td>
+            <td>Cerveza Pilsen</td>
+            <td>Sí</td>
+            <td>S/. 5.00</td>
+            <td>1</td>
+            <td>02-01-2014</td>
+            <td>Activo</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Cristal</td>
+            <td>Cerveza Cristal</td>
+            <td>Sí</td>
+            <td>S/. 5.50</td>
+            <td>1</td>
+            <td>02-01-2014</td>
+            <td>Activo</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Cuzqueña</td>
+            <td>Cerveza Cuzqueña</td>
+            <td>Sí</td>
+            <td>S/. 6.00</td>
+            <td>1</td>
+            <td>02-01-2014</td>
+            <td>Inactivo</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container-buttons">
+    <p>
+        <a class="btn btn-success" href="~/Promocion/Edit" role="button">Editar</a>
+        <a class="btn btn-danger" href="~/Promocion/Index" role="button">Cancelar</a>
+    </p>
+</div>
