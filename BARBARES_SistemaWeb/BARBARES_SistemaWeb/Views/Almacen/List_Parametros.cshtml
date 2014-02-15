@@ -1,7 +1,7 @@
 ﻿@model BARBARES_SistemaWeb.Models.Pedido
 
 @{
-    ViewBag.Title = "Pedidos - Parámetros";
+    ViewBag.Title = "Logística - Parámetros";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,8 +13,8 @@
             <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
             <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
             <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
-            <li class="active">@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
-            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li class="active">@Html.ActionLink("Logística", "Index", "Almacen")</li>
             <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
             <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
         </ul>
@@ -25,13 +25,13 @@
         <div class="container">
             <h1>@ViewBag.Title</h1>
             <p>
-                En esta sección se muestran todos los parámetros de pedidos ingresados en el sistema. Para visualizarlos dar click en el botón "Detalle" del registro correspondiente en la parte inferior.
+                En esta sección se muestran todos los parámetros de logística ingresados en el sistema. Para visualizarlos dar click en el botón "Detalle" del registro correspondiente en la parte inferior.
             </p>
         </div>
     </div>
 }
 
-<h3>Estado Pedido</h3>
+<h3>Unidad Producto</h3>
 <hr class="divider" />
 <div class="btn-group btn-opciones">
   <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Estado" role="button">Nuevo</a>
@@ -89,7 +89,7 @@
 <p></p>
 <p></p>
 
-<h3>Motivo Cancelación</h3>
+<h3>Tipo Producto</h3>
 <hr class="divider" />
 <div class="btn-group btn-opciones">
   <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Motivo" role="button">Nuevo</a>
@@ -136,7 +136,7 @@
 <p></p>
 <p></p>
 
-<h3>Medio de Pago</h3>
+<h3>Tipo Movimiento</h3>
 <hr class="divider" />
 <div class="btn-group btn-opciones">
   <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Medio" role="button">Nuevo</a>
@@ -185,149 +185,6 @@
             <td>Activo</td>
             <td>
                 <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Medio" role="button">Detalle &raquo;</a></td>
-        </tr>
-    </tbody>
-</table>
-
-<p></p>
-<p></p>
-<p></p>
-
-<h3>Tipo Tarjeta</h3>
-<hr class="divider" />
-<div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.TipoTarjeta" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.TipoTarjeta" role="button">Editar</a>
-  <button type="button" class="btn btn-default">Activar/Desactivar</button>
-</div>
-<table class="table table-hover table-bordered responsive-utilities">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Fecha Creación</th>
-            <th>Última Modificación</th>
-            <th>Activo</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Visa</td>
-            <td>Visa</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.TipoTarjeta" role="button">Detalle &raquo;</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>MC</td>
-            <td>Mastercard</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.TipoTarjeta" role="button">Detalle &raquo;</a></td>
-        </tr>
-    </tbody>
-</table>
-
-
-<p></p>
-<p></p>
-<p></p>
-
-<h3>Moneda</h3>
-<hr class="divider" />
-<div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Moneda" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.Moneda" role="button">Editar</a>
-  <button type="button" class="btn btn-default">Activar/Desactivar</button>
-</div>
-<table class="table table-hover table-bordered responsive-utilities">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Símbolo</th>
-            <th>Descripción</th>
-            <th>Fecha Creación</th>
-            <th>Última Modificación</th>
-            <th>Activo</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>S/.</td>
-            <td>Nuevos Soles</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Moneda" role="button">Detalle &raquo;</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>$</td>
-            <td>Dólares</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Moneda" role="button">Detalle &raquo;</a></td>
-        </tr>
-    </tbody>
-</table>
-
-
-<p></p>
-<p></p>
-<p></p>
-
-<h3>Tipo Comprobante Pago</h3>
-<hr class="divider" />
-<div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.TipoComprobante" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.TipoComprobante" role="button">Editar</a>
-  <button type="button" class="btn btn-default">Activar/Desactivar</button>
-</div>
-<table class="table table-hover table-bordered responsive-utilities">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Fecha Creación</th>
-            <th>Última Modificación</th>
-            <th>Activo</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Boleta</td>
-            <td>Boleta de Ventas</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.TipoComprobante" role="button">Detalle &raquo;</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Factura</td>
-            <td>Factura</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Activo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.TipoComprobante" role="button">Detalle &raquo;</a></td>
         </tr>
     </tbody>
 </table>

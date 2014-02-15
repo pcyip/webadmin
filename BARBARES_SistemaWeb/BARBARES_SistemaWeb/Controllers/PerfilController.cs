@@ -6,17 +6,12 @@ using System.Web.Mvc;
 
 namespace BARBARES_SistemaWeb.Controllers
 {
-    public class UsuarioController : Controller
+    public class PerfilController : Controller
     {
         //
-        // GET: /Usuario/
+        // GET: /Perfil/
 
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Login()
         {
             return View();
         }
@@ -27,7 +22,7 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // GET: /Usuario/Details/5
+        // GET: /Perfil/Details/5
 
         public ActionResult Details()
         {
@@ -35,7 +30,7 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // GET: /Usuario/Create
+        // GET: /Perfil/Create
 
         public ActionResult Create()
         {
@@ -43,7 +38,7 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // POST: /Usuario/Create
+        // POST: /Perfil/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -61,15 +56,15 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // GET: /Usuario/Edit/5
+        // GET: /Perfil/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit()
         {
             return View();
         }
 
         //
-        // POST: /Usuario/Edit/5
+        // POST: /Perfil/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -87,7 +82,7 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // GET: /Usuario/Delete/5
+        // GET: /Perfil/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -95,7 +90,7 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // POST: /Usuario/Delete/5
+        // POST: /Perfil/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

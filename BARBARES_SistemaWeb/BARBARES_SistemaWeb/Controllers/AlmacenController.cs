@@ -21,6 +21,11 @@ namespace BARBARES_SistemaWeb.Controllers
             return View();
         }
 
+        public ActionResult List_Parametros()
+        {
+            return View();
+        }
+
         //
         // GET: /Almacen/Details/5
 

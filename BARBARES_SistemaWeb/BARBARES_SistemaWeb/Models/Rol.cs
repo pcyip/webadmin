@@ -9,6 +9,7 @@ namespace BARBARES_SistemaWeb.Models
     {
         public int IdRol { get; set; }
         public string Accion { get; set; }
+        public string Descripcion { get; set; }
         public bool Activo { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime UltimaModificacion { get; set; }

@@ -188,6 +188,7 @@
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\MovimientoController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\PromocionController.cs" />
@@ -453,6 +454,15 @@
     <Content Include="Views\Vehiculo\Create.cshtml" />
     <Content Include="Views\Movimiento\List.cshtml" />
     <Content Include="Views\Movimiento\Details.cshtml" />
+    <Content Include="Views\Movimiento\Create.cshtml" />
+    <Content Include="Views\Usuario\List.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Perfil\List.cshtml" />
+    <Content Include="Views\Perfil\Details.cshtml" />
+    <Content Include="Views\Perfil\Edit.cshtml" />
+    <Content Include="Views\Perfil\Create.cshtml" />
+    <Content Include="Views\Almacen\List_Parametros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
