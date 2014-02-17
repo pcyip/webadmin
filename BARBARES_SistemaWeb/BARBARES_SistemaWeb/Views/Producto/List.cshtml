@@ -1,7 +1,6 @@
-﻿@model BARBARES_SistemaWeb.Models.Producto
+﻿@model List<BARBARES_SistemaWeb.Models.Producto>
 
 @{
-    ViewBag.Title = "Usuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -239,3 +238,14 @@
         </tr>
     </tbody>
 </table>
+
+
+
+@foreach (var p in Model)
+{
+    <tr>
+        <td>
+            @p.Nombre
+        </td>
+    </tr>
+}

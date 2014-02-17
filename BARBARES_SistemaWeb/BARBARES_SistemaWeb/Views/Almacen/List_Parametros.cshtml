@@ -30,15 +30,8 @@
         </div>
     </div>
 }
-
-<h3>Unidad Producto</h3>
+<h3>Tipo Producto</h3>
 <hr class="divider" />
-<div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Estado" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.Estado" role="button">Editar</a>
-  <button type="button" class="btn btn-default">Activar/Desactivar</button>
-</div>
-
 <table class="table table-hover table-bordered responsive-utilities">
     <thead>
         <tr>
@@ -54,33 +47,33 @@
     <tbody>
         <tr>
             <td>1</td>
-            <td>Enviado</td>
-            <td>Pedido Enviado</td>
+            <td>Cervezas</td>
+            <td>Cervezas</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Estado" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoProducto" role="button">Detalle &raquo;</a></td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Entregado</td>
-            <td>Pedido Entregado</td>
-            <td>02-01-2014</td>
-            <td>02-01-2014</td>
-            <td>Inactivo</td>
-            <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Estado" role="button">Detalle &raquo;</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Cancelado</td>
-            <td>Pedido Cancelado</td>
+            <td>Vinos</td>
+            <td>Vinos</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Estado" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoProducto" role="button">Detalle &raquo;</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rones</td>
+            <td>Rones</td>
+            <td>02-01-2014</td>
+            <td>02-01-2014</td>
+            <td>Activo</td>
+            <td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoProducto" role="button">Detalle &raquo;</a></td>
         </tr>
     </tbody>
 </table>
@@ -89,13 +82,14 @@
 <p></p>
 <p></p>
 
-<h3>Tipo Producto</h3>
+<h3>Unidad Producto</h3>
 <hr class="divider" />
 <div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Motivo" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.Motivo" role="button">Editar</a>
+  <a class="btn btn-default" href="~/Almacen/Create_Parametro?id=@ViewBag.Unidad" role="button">Nuevo</a>
+  <a class="btn btn-default" href="~/Almacen/Edit_Parametro?id=@ViewBag.Unidad" role="button">Editar</a>
   <button type="button" class="btn btn-default">Activar/Desactivar</button>
 </div>
+
 <table class="table table-hover table-bordered responsive-utilities">
     <thead>
         <tr>
@@ -111,23 +105,33 @@
     <tbody>
         <tr>
             <td>1</td>
-            <td>Nunca llegó</td>
-            <td>Unidad no llegó a cliente</td>
+            <td>ml</td>
+            <td>Mililitros</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Motivo" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.Unidad" role="button">Detalle &raquo;</a></td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Cliente desiste</td>
-            <td>Cliente no quiere</td>
+            <td>gr</td>
+            <td>Gramos</td>
+            <td>02-01-2014</td>
+            <td>02-01-2014</td>
+            <td>Inactivo</td>
+            <td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.Unidad" role="button">Detalle &raquo;</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>lt</td>
+            <td>Litros</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Motivo" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.Unidad" role="button">Detalle &raquo;</a></td>
         </tr>
     </tbody>
 </table>
@@ -139,8 +143,8 @@
 <h3>Tipo Movimiento</h3>
 <hr class="divider" />
 <div class="btn-group btn-opciones">
-  <a class="btn btn-default" href="~/Pedido/Create_Parametro?id=@ViewBag.Medio" role="button">Nuevo</a>
-  <a class="btn btn-default" href="~/Pedido/Edit_Parametro?id=@ViewBag.Medio" role="button">Editar</a>
+  <a class="btn btn-default" href="~/Almacen/Create_Parametro?id=@ViewBag.TipoMovimiento" role="button">Nuevo</a>
+  <a class="btn btn-default" href="~/Almacen/Edit_Parametro?id=@ViewBag.TipoMovimiento" role="button">Editar</a>
   <button type="button" class="btn btn-default">Activar/Desactivar</button>
 </div>
 <table class="table table-hover table-bordered responsive-utilities">
@@ -158,33 +162,33 @@
     <tbody>
         <tr>
             <td>1</td>
-            <td>Efectivo</td>
-            <td>Pago en efectivo</td>
+            <td>Venta</td>
+            <td>Salida por venta</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Medio" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoMovimiento" role="button">Detalle &raquo;</a></td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Débito</td>
-            <td>Tarjeta de débito</td>
+            <td>Merma</td>
+            <td>Salida por merma</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Medio" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoMovimiento" role="button">Detalle &raquo;</a></td>
         </tr>
         <tr>
             <td>3</td>
-            <td>Crédito</td>
-            <td>Tarjeta de crédito</td>
+            <td>Compra</td>
+            <td>Ingreso por compras</td>
             <td>02-01-2014</td>
             <td>02-01-2014</td>
             <td>Activo</td>
             <td>
-                <a class="btn btn-xs btn-success" href="~/Pedido/Details_Parametro?id=@ViewBag.Medio" role="button">Detalle &raquo;</a></td>
+                <a class="btn btn-xs btn-success" href="~/Almacen/Details_Parametro?id=@ViewBag.TipoMovimiento" role="button">Detalle &raquo;</a></td>
         </tr>
     </tbody>
 </table>

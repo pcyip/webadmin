@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -246,6 +248,11 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReferenceProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\barabares.css" />
@@ -369,6 +376,31 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.Producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.ProductoXAlmacen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.ProductoXVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.ResponseBD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.TipoProducto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReferenceProducto\BARBARES_SistemaWeb.ServiceReferenceProducto.UnidadProducto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReferenceProducto\Producto_Services.disco" />
+    <None Include="Service References\ServiceReferenceProducto\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceProducto\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -463,12 +495,31 @@
     <Content Include="Views\Perfil\Edit.cshtml" />
     <Content Include="Views\Perfil\Create.cshtml" />
     <Content Include="Views\Almacen\List_Parametros.cshtml" />
+    <None Include="Service References\ServiceReferenceProducto\Producto_Services.wsdl" />
+    <None Include="Service References\ServiceReferenceProducto\Producto_Services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceProducto\Producto_Services1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceProducto\Producto_Services2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Almacen\Details_Parametro.cshtml" />
+    <Content Include="Views\Almacen\Edit_Parametro.cshtml" />
+    <Content Include="Views\Almacen\Create_Parametro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceProducto\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -63,7 +63,7 @@ namespace BARBARES_SistemaWeb.Controllers
         //
         // GET: /Usuario/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit()
         {
             return View();
         }

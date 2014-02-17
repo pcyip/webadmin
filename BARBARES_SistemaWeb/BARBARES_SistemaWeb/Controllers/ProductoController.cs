@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BARBARES_SistemaWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,6 +30,20 @@ namespace BARBARES_SistemaWeb.Controllers
 
         public ActionResult List(int id)
         {
+            /*
+            ServiceReferenceProducto.Producto_ServicesClient s  = new ServiceReferenceProducto.Producto_ServicesClient();
+            List<ServiceReferenceProducto.Producto> productos = s.selectAll_Producto().ToList();
+            List<Producto> p = new List<Producto>();
+             
+
+            for (int i = 0; i < productos.Count; i++)
+            {
+                Producto prd = new Producto();
+                prd.Nombre = productos[i].Nombre;
+                p.Add(prd);
+            }
+            */
+
             if (id == 1)
                 ViewBag.Title = "Cerveza";
             else if (id == 2)

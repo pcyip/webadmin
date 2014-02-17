@@ -23,6 +23,81 @@ namespace BARBARES_SistemaWeb.Controllers
 
         public ActionResult List_Parametros()
         {
+            ViewBag.TipoProducto = 1;
+            ViewBag.Unidad = 2;
+            ViewBag.TipoMovimiento = 3;
+
+            return View();
+        }
+
+        public ActionResult Details_Parametro(int id)
+        {
+
+            if (id == 1)
+            {
+                ViewBag.Header = "Tipo Producto";
+                ViewBag.Nombre = "Cervezas";
+                ViewBag.Desc = "Cervezas";
+            }
+            else if (id == 2)
+            {
+                ViewBag.Header = "Unidad Producto";
+                ViewBag.Nombre = "lt";
+                ViewBag.Desc = "Litros";
+            }
+
+            else if (id == 3)
+            {
+                ViewBag.Header = "Tipo Movimiento";
+                ViewBag.Nombre = "Venta";
+                ViewBag.Desc = "Salida por venta";
+            }
+
+            ViewBag.Tipo = id;
+
+            return View();
+        }
+
+        public ActionResult Edit_Parametro(int id)
+        {
+            if (id == 1)
+            {
+                ViewBag.Header = "Tipo Producto";
+                ViewBag.Nombre = "Cervezas";
+                ViewBag.Desc = "Cervezas";
+            }
+            else if (id == 2)
+            {
+                ViewBag.Header = "Unidad Producto";
+                ViewBag.Nombre = "lt";
+                ViewBag.Desc = "Litros";
+            }
+
+            else if (id == 3)
+            {
+                ViewBag.Header = "Tipo Movimiento";
+                ViewBag.Nombre = "Venta";
+                ViewBag.Desc = "Salida por venta";
+            }
+
+            ViewBag.Tipo = id;
+
+            return View();
+        }
+
+        public ActionResult Create_Parametro(int id)
+        {
+            if (id == 1)
+                ViewBag.Header = "Tipo Producto";
+
+            else if (id == 2)
+                ViewBag.Header = "Unidad Producto";
+
+            else if (id == 3)
+                ViewBag.Header = "Unidad Producto";
+
+            ViewBag.Tipo = id;
+
             return View();
         }
 
