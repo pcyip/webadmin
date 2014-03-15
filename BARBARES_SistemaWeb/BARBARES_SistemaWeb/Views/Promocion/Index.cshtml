@@ -1,0 +1,85 @@
+﻿@model BARBARES_SistemaWeb.Models.Promocion
+
+@{
+    ViewBag.Title = "Promociones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted"><img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li class="active">@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                En esta sección se muestran todos las promociones registrados en el sistema. Para visualizarlos dar click en el botón "Ver más" en el registro correspondiente.
+            </p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="~/Promocion/Create">Agregar Promoción &raquo;</a></p>
+        </div>
+    </div>
+}
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Promoción de la semana. <br/><span class="text-muted">Pisco + Sprite + Hielo</span></h2>
+            <p class="lead">Descripción de la promoción. Precio de la promoción.</p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="~/Promocion/Details">Ver más &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/images/promo-1-pisco-390x300-px.png" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/images/promo-2-whisky-381x308-px.png" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Otras promociones. <br/><span class="text-muted">Whisky + Guaraná</span></h2>
+            <p class="lead">Descripción de la promoción. Precio de la promoción.</p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="~/Promocion/Details">Ver más &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Otras promociones. <br/><span class="text-muted">Ron + Coca Cola + Piqueo + Hielo</span></h2>
+            <p class="lead">Descripción de la promoción. Precio de la promoción.</p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="~/Promocion/Details">Ver más &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/images/promo-3-ron-391x312-px.png" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+</div>

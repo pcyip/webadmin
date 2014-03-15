@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Producto" nillable="true" type="tns:Producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProducto" nillable="true" type="tns:ArrayOfProducto" />
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUnidadProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Perecible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:double" />
+      <xs:element minOccurs="0" name="Presentacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UltimaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto" />
+  <xs:complexType name="ResponseBD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flujo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBD" nillable="true" type="tns:ResponseBD" />
+  <xs:complexType name="ArrayOfTipoProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoProducto" nillable="true" type="tns:TipoProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoProducto" nillable="true" type="tns:ArrayOfTipoProducto" />
+  <xs:complexType name="TipoProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdTipoProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoProducto" nillable="true" type="tns:TipoProducto" />
+  <xs:complexType name="ArrayOfUnidadProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnidadProducto" nillable="true" type="tns:UnidadProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnidadProducto" nillable="true" type="tns:ArrayOfUnidadProducto" />
+  <xs:complexType name="UnidadProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUnidadProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="UltimaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Unidad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnidadProducto" nillable="true" type="tns:UnidadProducto" />
+  <xs:complexType name="ArrayOfProductoXAlmacen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoXAlmacen" nillable="true" type="tns:ProductoXAlmacen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoXAlmacen" nillable="true" type="tns:ArrayOfProductoXAlmacen" />
+  <xs:complexType name="ProductoXAlmacen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAlmacen" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProductoXAlmacen" type="xs:int" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoXAlmacen" nillable="true" type="tns:ProductoXAlmacen" />
+  <xs:complexType name="ArrayOfProductoXVehiculo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoXVehiculo" nillable="true" type="tns:ProductoXVehiculo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoXVehiculo" nillable="true" type="tns:ArrayOfProductoXVehiculo" />
+  <xs:complexType name="ProductoXVehiculo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProductoXVehiculo" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVehiculo" type="xs:int" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoXVehiculo" nillable="true" type="tns:ProductoXVehiculo" />
+</xs:schema>

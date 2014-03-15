@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc2ae7c4-d335-413c-a747-12617be8a5a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2576/Promocion_Services.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Promocion_Services.xsd" MetadataType="Schema" ID="88215417-d6f8-4627-b26f-8ee9c24bd301" SourceId="1" SourceUrl="http://localhost:2576/Promocion_Services.svc?xsd=xsd1" />
+    <MetadataFile FileName="Promocion_Services.wsdl" MetadataType="Wsdl" ID="07ad9101-e5dc-433c-bd30-3f49fb1b5974" SourceId="1" SourceUrl="http://localhost:2576/Promocion_Services.svc?wsdl" />
+    <MetadataFile FileName="Promocion_Services1.xsd" MetadataType="Schema" ID="6886cedd-2330-462c-95c9-098437e22526" SourceId="1" SourceUrl="http://localhost:2576/Promocion_Services.svc?xsd=xsd0" />
+    <MetadataFile FileName="Promocion_Services.disco" MetadataType="Disco" ID="d8c572b0-877e-485d-b409-28e5e57815e7" SourceId="1" SourceUrl="http://localhost:2576/Promocion_Services.svc?disco" />
+    <MetadataFile FileName="Promocion_Services2.xsd" MetadataType="Schema" ID="d8582fe2-2d50-4c30-a3b1-71b670d729c6" SourceId="1" SourceUrl="http://localhost:2576/Promocion_Services.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

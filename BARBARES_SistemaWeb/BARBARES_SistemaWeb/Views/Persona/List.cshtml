@@ -1,0 +1,177 @@
+﻿@model List<BARBARES_SistemaWeb.Utils.Select.Persona>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li class="active">@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                En esta sección se muestran todos las personass ingresados en el sistema. Para visualizar dar click en el botón "Detalle" en el registro correspondiente en la parte inferior.
+            </p>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Tipo == 2)
+{
+
+    <h3>Opciones</h3>
+    <hr class="divider" />
+
+    <div class="btn-group btn-opciones">
+        <a class="btn btn-default" href="~/Persona/Create?id=@ViewBag.Tipo" role="button">Nuevo</a>
+        <a class="btn btn-default" href="~/Persona/Edit?id=@ViewBag.Tipo" role="button">Editar</a>
+        <button type="button" class="btn btn-default">Activar/Desactivar</button>
+    </div>    
+}
+
+<h3>Filtros</h3>
+<hr class="divider" />
+@using (Html.BeginForm("List", "Persona", FormMethod.Post))
+{
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-align-justify"></i>
+            <label for="nombre">Nombres:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-align-justify"></i>
+            <label for="appat">Apellido Paterno:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="appat" name="appat">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-align-justify"></i>
+            <label for="apmat">Apellido Materno:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="apmat" name="apmat">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-envelope"></i>
+            <label for="estado">Estado:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="estado" name="estado" value="true">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-list-alt"></i>
+            <label for="tipoDoc">Tipo Documento:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tipoDoc" name="tipoDoc">
+                <option value="0"></option>
+                @foreach (var t in ViewBag.TipoDocumento)
+                {
+                    <option value="@t.IdTipoDocumento">@t.Nombre</option>            
+                }
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-credit-card"></i>
+            <label for="nroDoc">Nro. Documento:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="nroDoc" name="nroDoc">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="desde">Desde:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="desde" name="desde">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="hasta">Hasta:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="hasta" name="hasta">
+        </div>
+    </div>
+</div>
+<input type="hidden" class="form-control" id="idTipo" name="idTipo" value="@ViewBag.Tipo">
+
+<div class="container-buttons">
+    <p>
+        <button type="submit" class="btn btn-primary">Buscar &raquo;</button>
+    </p>
+</div>
+}
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Tipo Doc.</th>
+            <th>Número Doc.</th>
+            <th>Sexo</th>
+            <th>Email</th>
+            <th>Celular</th>
+            @if (ViewBag.Tipo == 2)
+            {
+                <th>Usuario</th>
+            }
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.IdPersona</td>
+                <td>@p.Nombres</td>
+                <td>@p.ApellidoPaterno</td>
+                <td>@p.ApellidoMaterno</td>
+                <td>@p.TipoDocumento</td>
+                <td>@p.NumeroDocumento</td>
+                <td>@p.Sexo</td>
+                <td>@p.Email</td>
+                <td>@p.Celular</td>
+                @if (ViewBag.Tipo == 2)
+                {
+                    <td>@p.Usuario</td>
+                }
+                <td><a class="btn btn-xs btn-success" role="button" href="~/Persona/Details?id=@ViewBag.Tipo">Detalle &raquo;</a></td>
+            </tr>            
+        }
+    </tbody>
+</table>
+

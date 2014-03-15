@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="29690487-09ce-4bfa-8bb7-1c0a108ebc55" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2576/Comprobante_Services.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Comprobante_Services.disco" MetadataType="Disco" ID="d62f47bb-1b29-4908-a4bf-f70b9b48526c" SourceId="1" SourceUrl="http://localhost:2576/Comprobante_Services.svc?disco" />
+    <MetadataFile FileName="Comprobante_Services.xsd" MetadataType="Schema" ID="e8989516-e501-4bdc-805a-0b6f506a9734" SourceId="1" SourceUrl="http://localhost:2576/Comprobante_Services.svc?xsd=xsd2" />
+    <MetadataFile FileName="Comprobante_Services.wsdl" MetadataType="Wsdl" ID="c55a21cf-22ca-4ec3-9e08-3c9bef42c590" SourceId="1" SourceUrl="http://localhost:2576/Comprobante_Services.svc?wsdl" />
+    <MetadataFile FileName="Comprobante_Services1.xsd" MetadataType="Schema" ID="5573b024-5bcf-49f8-bab2-45a26eb09df7" SourceId="1" SourceUrl="http://localhost:2576/Comprobante_Services.svc?xsd=xsd0" />
+    <MetadataFile FileName="Comprobante_Services2.xsd" MetadataType="Schema" ID="769bedbe-eadc-4e39-b73d-08dbf217adcc" SourceId="1" SourceUrl="http://localhost:2576/Comprobante_Services.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
