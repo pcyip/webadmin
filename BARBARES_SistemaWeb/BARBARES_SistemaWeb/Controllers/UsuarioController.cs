@@ -69,6 +69,7 @@ namespace BARBARES_SistemaWeb.Controllers
                 cookie.Expires = System.DateTime.Now.AddMinutes(timeout);//My Line
                 cookie.HttpOnly = true; // cookie not available in javascript.
                 Response.Cookies.Add(cookie);
+                Session["usuario"] = usuario;
 
                 return RedirectToAction("Index", "Home");
             }

@@ -10,7 +10,7 @@ namespace BARBARES_SistemaWeb.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Bienvenido @NombreUsuario al Sistema Administrador de Barabares";
+            ViewBag.Message = "Bienvenido " + Session["usuario"] + " al Sistema Administrador de Barabares";
 
             return View();
         }
