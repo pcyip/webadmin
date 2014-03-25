@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Promocion" nillable="true" type="tns:Promocion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPromocion" nillable="true" type="tns:ArrayOfPromocion" />
+  <xs:complexType name="Promocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:double" />
+      <xs:element minOccurs="0" name="Semana" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Promocion" nillable="true" type="tns:Promocion" />
+  <xs:complexType name="ResponseBD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flujo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBD" nillable="true" type="tns:ResponseBD" />
+  <xs:complexType name="ArrayOfDetallePromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetallePromocion" nillable="true" type="tns:DetallePromocion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetallePromocion" nillable="true" type="tns:ArrayOfDetallePromocion" />
+  <xs:complexType name="DetallePromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDetallePromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetallePromocion" nillable="true" type="tns:DetallePromocion" />
+</xs:schema>

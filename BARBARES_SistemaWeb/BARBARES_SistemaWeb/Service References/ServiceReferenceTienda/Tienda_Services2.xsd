@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tienda" nillable="true" type="tns:Tienda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTienda" nillable="true" type="tns:ArrayOfTienda" />
+  <xs:complexType name="Tienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdDireccion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTienda" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tienda" nillable="true" type="tns:Tienda" />
+  <xs:complexType name="ResponseBD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flujo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBD" nillable="true" type="tns:ResponseBD" />
+</xs:schema>
