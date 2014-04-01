@@ -1,0 +1,171 @@
+﻿@model List<BARBARES_SistemaWeb.Utils.Select.Almacen>
+
+@{
+    ViewBag.Title = "Almacenes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li class="active">@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                En esta sección se muestran todos los almacenes ingresados en el sistema. Para visualizar dar click en el botón "Detalle" en el registro correspondiente en la parte inferior.
+            </p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="~/Inventario/List_Almacen">Inventarios &raquo;</a></p>
+        </div>
+    </div>
+}
+
+<h3>Opciones</h3>
+<hr class="divider" />
+
+<div class="btn-group btn-opciones">
+    <a class="btn btn-default" href="~/Almacen/Create" role="button">Nuevo</a>
+    <a class="btn btn-default" href="~/Almacen/Edit" role="button">Editar</a>
+    <button type="button" class="btn btn-default">Activar/Desactivar</button>
+</div>
+
+<h3>Filtros</h3>
+<hr class="divider" />
+@using (Html.BeginForm("List", "Almacen", FormMethod.Post))
+{
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-align-justify"></i>
+            <label for="desc">Descripción:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="desc" name="desc">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="departamento">Departamento:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="departamento" name="departamento">
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="provincia">Provincia:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="provincia" name="provincia">
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="distrito">Distrito:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="distrito" name="distrito">
+            </select>
+        </div>
+    </div>
+</div>
+    
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-check"></i>
+            <label for="estado">Estado:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="estado" name="estado" value="true">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-tower"></i>
+            <label for="tienda">Tienda:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tienda" name="tienda">
+                <option value="0"></option>
+                @foreach (var t in ViewBag.Tienda)
+                {
+                    <option value="@t.IdTienda">@t.Nombre</option>            
+                }
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="desde">Desde:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="desde" name="desde">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="hasta">Hasta:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="hasta" name="hasta">
+        </div>
+    </div>
+</div>
+
+<div class="container-buttons">
+    <p>
+        <button type="submit" class="btn btn-primary">Buscar &raquo;</button>
+    </p>
+</div>
+
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Descripción</th>
+            <th>Capacidad</th>
+            <th>Fecha Creación</th>
+            <th>Departamento</th>
+            <th>Provincia</th>
+            <th>Distrito</th>
+            <th>Tienda</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.IdAlmacen</td>
+                <td>@a.Descripcion</td>
+                <td>@a.Capacidad</td>
+                <td>@a.Fecha</td>
+                <td>@a.Departamento</td>
+                <td>@a.Provincia</td>
+                <td>@a.Distrito</td>
+                <td>@a.Tienda</td>
+                <td><a class="btn btn-xs btn-success" role="button" href="~/Almacen/Details">Detalle &raquo;</a></td>
+            </tr>
+            
+        }
+
+    </tbody>
+</table>
+}

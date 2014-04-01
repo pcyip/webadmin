@@ -1,0 +1,204 @@
+﻿@model BARBARES_SistemaWeb.Models.Producto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li class="active">@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                Editar el registro seleccionado.
+            </p>
+        </div>
+    </div>
+}
+
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-align-justify"></i>
+            <label for="nombre">Nombre:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="nombre" value="Cerveza Pilsen">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-list"></i>
+            <label for="desc">Descripción:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="desc" value="Descripción de la Cerveza Pilsen">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-list-alt"></i>
+            <label for="unidad">Unidad:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="unidad">
+                @foreach (var t in ViewBag.UnidadProducto)
+                {
+                    <option value="@t.IdUnidadProducto">@t.Unidad</option>            
+                }
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-barcode   "></i>
+            <label for="presentacion">Presentación:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="presentacion" value="650">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-warning-sign"></i>
+            <label for="perecible">Perecible:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="perecible" value="true">
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-usd"></i>
+            <label for="precio">Precio Unitario:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="precio" value="5.00">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-check"></i>
+            <label for="estado">Estado:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="estado" value="true">
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-flag"></i>
+            <label for="obs">Observaciones:</label>
+        </div>
+        <div class="col-xs-8">
+            <textarea class="form-control" rows="3" id="obs" placeholder="Observaciones">Observaciones del producto</textarea>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-upload"></i>
+            <label for="file">Cargar archivo:</label>
+        </div>
+        <div class="col-xs-5">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-default btn-file">Explorar&hellip;
+                        <input type="file" multiple>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <img data-src="holder.js/200x200" alt="Generic placeholder image" class="img-product img-responsive" />
+        </div>
+    </div>
+</div>
+
+<div class="container-buttons">
+    <p>
+        <button class="btn btn-default" data-toggle="modal" data-target="#myModal">
+            Agregar Stock
+        </button>
+        <a class="btn btn-success" href="~/Producto/Details?id=@ViewBag.Tipo" role="button">Guardar</a>
+        <a class="btn btn-danger" href="~/Producto/Index" role="button">Cancelar</a>
+    </p>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Agregar Stock</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-modal">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-offset-0">
+                            <i class="glyphicon glyphicon-align-justify"></i>
+                            <label for="codigo">Código:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="number" class="form-control" id="codigo" value="1" disabled>
+                        </div>
+                        <div class="col-xs-3">
+                            <i class="glyphicon glyphicon-check"></i>
+                            <label for="nomb">Nombre:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="nomb" value="Pilsen" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-modal">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-offset-0">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            <label for="stock">Cantidad:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="number" class="form-control" id="stock">
+                        </div>
+                        <div class="col-xs-3">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            <label for="almac">Almacén:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="almac">
+                                <option>La Molina1</option>
+                                <option>Ate 1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>

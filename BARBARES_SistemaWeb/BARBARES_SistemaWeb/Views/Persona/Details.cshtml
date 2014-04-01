@@ -1,0 +1,277 @@
+﻿@model BARBARES_SistemaWeb.Models.Persona
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li class="active">@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                Detalle del registro seleccionado.
+            </p>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-offset-profile">
+            <img data-src="holder.js/200x200" alt="Generic placeholder image" class="img-profile img-responsive" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-md-offset-4">
+            <h2 class="text-center">Carolita Cosquillo Alarcón</h2>
+            <h3></h3>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-list-alt"></i>
+            <label for="tipoDoc">Tipo Documento:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tipoDoc" disabled>
+                <option>DNI</option>
+                <option>CE</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-credit-card"></i>
+            <label for="nroDoc">Nro. Documento:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="nroDoc" value="87765543" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2 col-md-offset-1">
+            <i class="glyphicon glyphicon-phone-alt"></i>
+            <label for="telefono">Teléfono:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="tel" class="form-control" id="telefono" value="4765543" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-phone"></i>
+            <label for="celular">Celular:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="tel" class="form-control" id="celular" value="987765543" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-user"></i>
+            <label for="sexo">Sexo:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="sexo" disabled>
+                <option>Femenino</option>
+                <option>Masculino</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="cumple">Fecha Nacimiento:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="cumple" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-envelope"></i>
+            <label for="email">Email:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="email" class="form-control" id="email" placeholder="email@dominio.com" value="ccosquillo@barabares.com" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-check"></i>
+            <label for="estado">Estado:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="checkbox" id="estado" value="true" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="creacion">Fecha Creación:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="creacion" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="modificacion">Última Modificación:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="modificacion" disabled>
+        </div>
+    </div>
+</div>
+
+<h3>Dirección</h3>
+<hr class="divider">
+<div class="divider"></div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="tipoCalle">Tipo Calle:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tipoCalle" disabled>
+                <option>Calle</option>
+                <option>Jirón</option>
+                <option>Avenida</option>
+                <option>Pasaje</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="calle">Calle:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="calle" value="Madre de Dios" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="numero">Número:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="numero" value="345" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="interior">Interior:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="interior" value="101" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="tipoUrb">Tipo Urbanización:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tipoUrb" disabled>
+                <option>Urbanización</option>
+                <option>AAHH</option>
+                <option>Fundo</option>
+                <option>Cooperativa</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="urb">Urbanización:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="urb" value="Selva" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="mzlt">Mz-Lt:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="mzlt" value="M-8" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="ref">Referencia:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="ref" value="Por los mormones" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="departamento">Departamento:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="departamento" disabled>
+                <option>Lima</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="provincia">Provincia:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="provincia" disabled>
+                <option>Lima</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="distrito">Distrito:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="distrito" disabled>
+                <option>La Molina</option>
+                <option>San Miguel</option>
+                <option>Magdalena del Mar</option>
+                <option>San Isidro</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.Tipo == 2)
+{
+    <div class="container-buttons">
+        <p>
+            <a class="btn btn-success" href="~/Persona/Edit?id=@ViewBag.Tipo" role="button">Editar</a>
+            <a class="btn btn-danger" href="~/Persona/Index" role="button">Cancelar</a>
+        </p>
+    </div>
+
+}

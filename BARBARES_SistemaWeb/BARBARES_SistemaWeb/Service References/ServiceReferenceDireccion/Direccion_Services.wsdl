@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Direccion_Services" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2576/Direccion_Services.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2576/Direccion_Services.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2576/Direccion_Services.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDireccion_Services_selectAll_Direccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_Direccion" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Direccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_DireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Direccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_Direccion" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Direccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_DireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Departamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_Departamento" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Departamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_DepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Departamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_Departamento" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Departamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_DepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Provincia_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_Provincia" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Provincia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_ProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Provincia_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_Provincia" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Provincia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_ProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Distrito_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_Distrito" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_Distrito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_DistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Distrito_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_Distrito" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_Distrito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_DistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_TipoCalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoCalle" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_TipoCalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoCalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_TipoCalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoCalle" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_TipoCalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoCalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_TipoUrb_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoUrb" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_selectAll_TipoUrb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoUrbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_TipoUrb_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoUrb" />
+  </wsdl:message>
+  <wsdl:message name="IDireccion_Services_add_TipoUrb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoUrbResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDireccion_Services">
+    <wsdl:operation name="selectAll_Direccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_Direccion" message="tns:IDireccion_Services_selectAll_Direccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_DireccionResponse" message="tns:IDireccion_Services_selectAll_Direccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_Direccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_Direccion" message="tns:IDireccion_Services_add_Direccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_DireccionResponse" message="tns:IDireccion_Services_add_Direccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Departamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_Departamento" message="tns:IDireccion_Services_selectAll_Departamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_DepartamentoResponse" message="tns:IDireccion_Services_selectAll_Departamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_Departamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_Departamento" message="tns:IDireccion_Services_add_Departamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_DepartamentoResponse" message="tns:IDireccion_Services_add_Departamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Provincia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_Provincia" message="tns:IDireccion_Services_selectAll_Provincia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_ProvinciaResponse" message="tns:IDireccion_Services_selectAll_Provincia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_Provincia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_Provincia" message="tns:IDireccion_Services_add_Provincia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_ProvinciaResponse" message="tns:IDireccion_Services_add_Provincia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Distrito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_Distrito" message="tns:IDireccion_Services_selectAll_Distrito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_DistritoResponse" message="tns:IDireccion_Services_selectAll_Distrito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_Distrito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_Distrito" message="tns:IDireccion_Services_add_Distrito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_DistritoResponse" message="tns:IDireccion_Services_add_Distrito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoCalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_TipoCalle" message="tns:IDireccion_Services_selectAll_TipoCalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_TipoCalleResponse" message="tns:IDireccion_Services_selectAll_TipoCalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoCalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_TipoCalle" message="tns:IDireccion_Services_add_TipoCalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_TipoCalleResponse" message="tns:IDireccion_Services_add_TipoCalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoUrb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_TipoUrb" message="tns:IDireccion_Services_selectAll_TipoUrb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/selectAll_TipoUrbResponse" message="tns:IDireccion_Services_selectAll_TipoUrb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoUrb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDireccion_Services/add_TipoUrb" message="tns:IDireccion_Services_add_TipoUrb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDireccion_Services/add_TipoUrbResponse" message="tns:IDireccion_Services_add_TipoUrb_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="webEndPoint" type="tns:IDireccion_Services">
+    <wsdl:operation name="selectAll_Direccion">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_Direccion">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Departamento">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_Departamento">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Provincia">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_Provincia">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_Distrito">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_Distrito">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoCalle">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoCalle">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoUrb">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoUrb">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Direccion_Services">
+    <wsdl:port name="webEndPoint" binding="tns:webEndPoint" />
+  </wsdl:service>
+</wsdl:definitions>

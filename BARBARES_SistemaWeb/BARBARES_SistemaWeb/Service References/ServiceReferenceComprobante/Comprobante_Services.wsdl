@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Comprobante_Services" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2576/Comprobante_Services.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2576/Comprobante_Services.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2576/Comprobante_Services.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComprobante_Services_selectAll_Comprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_Comprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_Comprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_ComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_Comprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_Comprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_Comprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_ComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_DetalleComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_DetalleComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_DetalleComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_DetalleComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_DetalleComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_DetalleComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_DetalleComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_DetalleComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_MedioPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_MedioPago" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_MedioPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_MedioPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_MedioPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_MedioPago" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_MedioPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_MedioPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_TipoComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_TipoComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_TipoComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_TipoComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_TipoTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_selectAll_TipoTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAll_TipoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_TipoTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IComprobante_Services_add_TipoTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_TipoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComprobante_Services">
+    <wsdl:operation name="selectAll_Comprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_Comprobante" message="tns:IComprobante_Services_selectAll_Comprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_ComprobanteResponse" message="tns:IComprobante_Services_selectAll_Comprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_Comprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/add_Comprobante" message="tns:IComprobante_Services_add_Comprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/add_ComprobanteResponse" message="tns:IComprobante_Services_add_Comprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_DetalleComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_DetalleComprobante" message="tns:IComprobante_Services_selectAll_DetalleComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_DetalleComprobanteResponse" message="tns:IComprobante_Services_selectAll_DetalleComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_DetalleComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/add_DetalleComprobante" message="tns:IComprobante_Services_add_DetalleComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/add_DetalleComprobanteResponse" message="tns:IComprobante_Services_add_DetalleComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_MedioPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_MedioPago" message="tns:IComprobante_Services_selectAll_MedioPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_MedioPagoResponse" message="tns:IComprobante_Services_selectAll_MedioPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_MedioPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/add_MedioPago" message="tns:IComprobante_Services_add_MedioPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/add_MedioPagoResponse" message="tns:IComprobante_Services_add_MedioPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_TipoComprobante" message="tns:IComprobante_Services_selectAll_TipoComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_TipoComprobanteResponse" message="tns:IComprobante_Services_selectAll_TipoComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/add_TipoComprobante" message="tns:IComprobante_Services_add_TipoComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/add_TipoComprobanteResponse" message="tns:IComprobante_Services_add_TipoComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_TipoTarjeta" message="tns:IComprobante_Services_selectAll_TipoTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/selectAll_TipoTarjetaResponse" message="tns:IComprobante_Services_selectAll_TipoTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobante_Services/add_TipoTarjeta" message="tns:IComprobante_Services_add_TipoTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobante_Services/add_TipoTarjetaResponse" message="tns:IComprobante_Services_add_TipoTarjeta_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="webEndPoint" type="tns:IComprobante_Services">
+    <wsdl:operation name="selectAll_Comprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_Comprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_DetalleComprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_DetalleComprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_MedioPago">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_MedioPago">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoComprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoComprobante">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="selectAll_TipoTarjeta">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="add_TipoTarjeta">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Comprobante_Services">
+    <wsdl:port name="webEndPoint" binding="tns:webEndPoint" />
+  </wsdl:service>
+</wsdl:definitions>

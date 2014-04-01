@@ -1,0 +1,264 @@
+﻿@model BARBARES_SistemaWeb.Models.Pedido
+
+@{
+    ViewBag.Title = "Pedidos - Parámetros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li class="active">@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                En esta sección se muestran todos los parámetros de pedidos ingresados en el sistema. Para visualizarlos dar click en el botón "Detalle" del registro correspondiente en la parte inferior.
+            </p>
+        </div>
+    </div>
+}
+
+<h3>Estado Pedido</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in ViewBag.EstadoPedido
+                as List<BARBARES_SistemaWeb.Models.EstadoPedido>)
+        {
+            <tr>
+                <td>@e.IdEstadoPedido</td>  
+                <td>@e.Nombre</td>              
+                <td>@e.Descripcion</td>
+                <td>@e.FechaCreacion</td>
+                <td>@e.UltimaModificacion</td>
+                @if (e.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>
+
+<p></p>
+<p></p>
+<p></p>
+
+<h3>Motivo Cancelación</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in ViewBag.MotivoCancelacion
+                as List<BARBARES_SistemaWeb.Models.MotivoCancelacion>)
+        {
+            <tr>
+                <td>@m.IdMotivoCancelacion</td>  
+                <td>@m.Nombre</td>              
+                <td>@m.Descripcion</td>
+                <td>@m.FechaCreacion</td>
+                <td>@m.UltimaModificacion</td>
+                @if (m.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>
+
+<p></p>
+<p></p>
+<p></p>
+
+<h3>Medio de Pago</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in ViewBag.MedioPago
+                as List<BARBARES_SistemaWeb.Models.MedioPago>)
+        {
+            <tr>
+                <td>@p.IdMedioPago</td>  
+                <td>@p.Nombre</td>              
+                <td>@p.Descripcion</td>
+                <td>@p.FechaCreacion</td>
+                <td>@p.UltimaModificacion</td>
+                @if (p.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>
+
+<p></p>
+<p></p>
+<p></p>
+
+<h3>Tipo Tarjeta</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in ViewBag.TipoTarjeta
+                as List<BARBARES_SistemaWeb.Models.TipoTarjeta>)
+        {
+            <tr>
+                <td>@t.IdTipoTarjeta</td>  
+                <td>@t.Nombre</td>              
+                <td>@t.Descripcion</td>
+                <td>@t.FechaCreacion</td>
+                <td>@t.UltimaModificacion</td>
+                @if (t.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>
+
+
+<p></p>
+<p></p>
+<p></p>
+
+<h3>Moneda</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Símbolo</th>
+            <th>Nombre</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in ViewBag.Moneda
+                as List<BARBARES_SistemaWeb.Models.Moneda>)
+        {
+            <tr>
+                <td>@d.IdMoneda</td>  
+                <td>@d.Simbolo</td>              
+                <td>@d.Nombre</td>
+                <td>@d.FechaCreacion</td>
+                <td>@d.UltimaModificacion</td>
+                @if (d.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>
+
+
+<p></p>
+<p></p>
+<p></p>
+
+<h3>Tipo Comprobante Pago</h3>
+<hr class="divider" />
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creación</th>
+            <th>Última Modificación</th>
+            <th>Activo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in ViewBag.TipoComprobante
+                as List<BARBARES_SistemaWeb.Models.TipoComprobante>)
+        {
+            <tr>
+                <td>@c.IdTipoComprobante</td>  
+                <td>@c.Nombre</td>              
+                <td>@c.Descripcion</td>
+                <td>@c.FechaCreacion</td>
+                <td>@c.UltimaModificacion</td>
+                @if (c.Activo == true)
+                {
+                    <td>Sí</td>
+                }
+                else{
+                    <td>No</td>
+                }
+            </tr>            
+        }
+    </tbody>
+</table>

@@ -1,0 +1,198 @@
+﻿@model BARBARES_SistemaWeb.Models.ComprobantePago
+
+@{
+    ViewBag.Title = "Comprobantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="masthead">
+        <h3 class="text-muted">
+            <img class="img-thumbnail img-responsive" src="~/images/botella-cabecera.jpg" alt="Barabares">Barabares - Sistema Administrador</h3>
+        <ul class="nav nav-justified">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Personas", "Index", "Persona")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+            <li class="active">@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+            <li>@Html.ActionLink("Logística", "Index", "Almacen")</li>
+            <li>@Html.ActionLink("Reportes", "Index", "Reporte")</li>
+            <li>@Html.ActionLink("Administración", "Index", "Usuario")</li>
+        </ul>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                Detalle del registro seleccionado.
+            </p>
+        </div>
+    </div>
+}
+
+<h3>Datos del comprobante</h3>
+<hr class="divider" />
+
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-user"></i>
+            <label for="cliente">Cliente:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="cliente" value="Carolina Cosquillo" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <label for="direc">Dirección:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="direc" value="La Molina, Lima" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="nroCom">Nro. Comprobante:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="nroCom" disabled>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="creacion">Fecha Creación:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="form-control" id="creacion" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <label for="tipo">Tipo:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tipo" disabled>
+                <option>Boleta</option>
+                <option>Factura</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-usd"></i>
+            <label for="total">Total:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" id="total" value="100.00" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-usd"></i>
+            <label for="moneda">Moneda:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="moneda" disabled>
+                <option>Soles</option>
+                <option>Dólares</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-credit-card"></i>
+            <label for="medio">Medio Pago:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="medio" disabled>
+                <option></option>
+                <option>Débito</option>
+                <option>Crédito</option>
+                <option>Efectivo</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-credit-card"></i>
+            <label for="tarjeta">Tarjeta:</label>
+        </div>
+        <div class="col-xs-3">
+            <select class="form-control" id="tarjeta" disabled>
+                <option>Visa</option>
+                <option>Mastercard</option>
+            </select>
+        </div>       
+        <div class="col-xs-2">
+            <i class="glyphicon glyphicon-tower"></i>
+            <label for="almacen">Almacén:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="almacen" value="La Molina 1" disabled>
+        </div>
+    </div>
+</div>
+<div class="container-form">
+    <div class="row">
+        <div class="col-xs-2  col-md-offset-1">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+            <label for="tienda">Tienda:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" id="tienda" value="Don Pepito" disabled>
+        </div>
+    </div>
+</div>
+
+<h3>Productos</h3>
+<hr class="divider" />
+
+<table class="table table-hover table-bordered responsive-utilities">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Perecible</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Pilsen</td>
+            <td>Cerveza Pilsen</td>
+            <td>Sí</td>
+            <td>S/. 5.00</td>
+            <td>1</td>
+            <td>S/. 5.00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Cristal</td>
+            <td>Cerveza Cristal</td>
+            <td>Sí</td>
+            <td>S/. 5.50</td>
+            <td>1</td>
+            <td>S/. 5.50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Cuzqueña</td>
+            <td>Cerveza Cuzqueña</td>
+            <td>Sí</td>
+            <td>S/. 6.00</td>
+            <td>1</td>
+            <td>S/. 6.00</td>
+        </tr>
+    </tbody>
+</table>
+

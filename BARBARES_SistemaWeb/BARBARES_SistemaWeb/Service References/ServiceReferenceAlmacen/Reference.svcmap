@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="742c1f69-38af-4bd9-8e6e-33c84ccfd9f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2576/Almacen_Services.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Almacen_Services.xsd" MetadataType="Schema" ID="2f8f8e6e-a5e9-4016-82cd-066b3cac843e" SourceId="1" SourceUrl="http://localhost:2576/Almacen_Services.svc?xsd=xsd2" />
+    <MetadataFile FileName="Almacen_Services.wsdl" MetadataType="Wsdl" ID="ee0edf27-7356-4960-afe1-125aa3488a93" SourceId="1" SourceUrl="http://localhost:2576/Almacen_Services.svc?wsdl" />
+    <MetadataFile FileName="Almacen_Services1.xsd" MetadataType="Schema" ID="b4d982de-be53-44d5-be16-73ffd2ccea67" SourceId="1" SourceUrl="http://localhost:2576/Almacen_Services.svc?xsd=xsd1" />
+    <MetadataFile FileName="Almacen_Services.disco" MetadataType="Disco" ID="8330f27b-bf69-45e2-930c-9bccf17428c7" SourceId="1" SourceUrl="http://localhost:2576/Almacen_Services.svc?disco" />
+    <MetadataFile FileName="Almacen_Services2.xsd" MetadataType="Schema" ID="fb1b151b-1f16-47a4-8338-0717449fecc6" SourceId="1" SourceUrl="http://localhost:2576/Almacen_Services.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,95 @@
+﻿#logout button {
+    float: right;
+    margin: 20px 0 -65px 0;
+}
+.container-form {
+  padding-top:5px;
+  padding-bottom:10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-modal {
+  padding-top:5px;
+  padding-bottom:10px;
+  padding-right: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-buttons {
+  padding-top:10px;
+  padding-bottom:20px;
+  padding-right: 30px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: 44%;
+}
+
+.img-profile {
+  width:200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.img-product {
+  width:200px;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.col-md-offset-profile {
+  margin-left: 40%;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+
+.lead-promo {
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    width: 750px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+    
+}
+
+@media screen and (max-width: 650px) {
+    #logout button {
+        margin: 20px 0 0 0;
+    }
+}

@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace BARBARES_SistemaWeb.Models
+{
+    public class LogUsuario
+    {
+        public int IdLogUsuario { get; set; }
+        public string Accion { get; set; }
+        public string Clase { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Ip { get; set; }
+        public int IdUsuario { get; set; }
+    }
+}

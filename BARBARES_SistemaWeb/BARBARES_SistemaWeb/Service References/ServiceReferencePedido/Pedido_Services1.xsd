@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BARABARES_Services.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pedido" nillable="true" type="tns:Pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPedido" nillable="true" type="tns:ArrayOfPedido" />
+  <xs:complexType name="Pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuantoPaga" type="xs:double" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaEntrega" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaPago" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAlmacen" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCarrito" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDireccion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEstadoPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMedioPago" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMotivoCancelacion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTienda" type="xs:int" />
+      <xs:element minOccurs="0" name="Total" type="xs:double" />
+      <xs:element minOccurs="0" name="Vuelto" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pedido" nillable="true" type="tns:Pedido" />
+  <xs:complexType name="ResponseBD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flujo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBD" nillable="true" type="tns:ResponseBD" />
+  <xs:complexType name="ArrayOfDetallePedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetallePedido" nillable="true" type="tns:DetallePedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetallePedido" nillable="true" type="tns:ArrayOfDetallePedido" />
+  <xs:complexType name="DetallePedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDetallePedido" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetallePedido" nillable="true" type="tns:DetallePedido" />
+  <xs:complexType name="ArrayOfEstadoPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoPedido" nillable="true" type="tns:EstadoPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadoPedido" nillable="true" type="tns:ArrayOfEstadoPedido" />
+  <xs:complexType name="EstadoPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEstadoPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoPedido" nillable="true" type="tns:EstadoPedido" />
+  <xs:complexType name="ArrayOfMotivoCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MotivoCancelacion" nillable="true" type="tns:MotivoCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMotivoCancelacion" nillable="true" type="tns:ArrayOfMotivoCancelacion" />
+  <xs:complexType name="MotivoCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdMotivoCancelacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotivoCancelacion" nillable="true" type="tns:MotivoCancelacion" />
+</xs:schema>

@@ -1,0 +1,31 @@
+﻿@model BARBARES_SistemaWeb.Models.Usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
+    {
+        <img class="img-rounded img-responsive" src="~/images/logo.png" alt="Generic placeholder image">
+        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su Usuario" required autofocus />
+        <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+        if (!String.IsNullOrEmpty((string)ViewBag.Mensaje))
+        {
+            <p class="error">@ViewBag.Mensaje</p>
+        }
+        <label class="checkbox">
+            <input type="checkbox" id="recordar" name="recordar" value="true"/>
+            Recordar
+        </label>
+        <a class="btn btn-link">¿Olvidé mi contraseña?</a>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>        
+    }
+</div>
+
+
+
+
+
+

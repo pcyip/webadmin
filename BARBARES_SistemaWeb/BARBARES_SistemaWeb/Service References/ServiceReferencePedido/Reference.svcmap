@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24d7a773-d8f5-465d-83e5-77c896ab2c04" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2576/Pedido_Services.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Pedido_Services.xsd" MetadataType="Schema" ID="9f4fb7f0-dfbf-415d-a9c1-23076e0fd15b" SourceId="1" SourceUrl="http://localhost:2576/Pedido_Services.svc?xsd=xsd1" />
+    <MetadataFile FileName="Pedido_Services1.xsd" MetadataType="Schema" ID="909d79c3-ba73-4738-8fe1-7c429b2649eb" SourceId="1" SourceUrl="http://localhost:2576/Pedido_Services.svc?xsd=xsd2" />
+    <MetadataFile FileName="Pedido_Services.wsdl" MetadataType="Wsdl" ID="b8367fcb-00d0-4a27-aa33-45aa4755019e" SourceId="1" SourceUrl="http://localhost:2576/Pedido_Services.svc?wsdl" />
+    <MetadataFile FileName="Pedido_Services.disco" MetadataType="Disco" ID="571672c4-3e14-4cc3-bd15-a500d8fb9d01" SourceId="1" SourceUrl="http://localhost:2576/Pedido_Services.svc?disco" />
+    <MetadataFile FileName="Pedido_Services2.xsd" MetadataType="Schema" ID="b71569ce-a57d-4bce-bf84-8e438c9c96e7" SourceId="1" SourceUrl="http://localhost:2576/Pedido_Services.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
