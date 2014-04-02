@@ -15,5 +15,6 @@ namespace BARBARES_SistemaWeb.Models
         public string Imagen { get; set; }
         public bool Semana { get; set; }
         public double PrecioUnitario { get; set; }
+        public int IdMoneda { get; set; }
     }
 }

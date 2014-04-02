@@ -1,0 +1,29 @@
+﻿@model List<BARBARES_SistemaWeb.Models.Perfil>
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Select", "Usuario", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
+    {
+        <img class="img-rounded img-responsive" src="~/images/logo.png" alt="Generic placeholder image">
+        <p></p>
+        <select class="form-control" id="perfil" name="perfil" required>
+            <option value="0">Seleccione su perfil</option>
+            @foreach (var t in Model)
+            {
+                <option value="@t.IdPerfil">@t.Nombre</option>            
+            }
+        </select>
+        <p></p>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Continuar</button>        
+    }
+</div>
+
+
+
+
+
+

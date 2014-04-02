@@ -104,7 +104,7 @@ namespace BARBARES_SistemaWeb.Controllers
             Stream newStream;
 
             //Select Productos por tipo
-            List<Producto> p = new List<Producto>();
+            List<Select.Producto> p = new List<Select.Producto>();
 
             data = encoding.GetBytes(JsonSerializer.selectByTipo_Producto(idTipo));
 
@@ -123,7 +123,7 @@ namespace BARBARES_SistemaWeb.Controllers
             {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 var objText = reader.ReadToEnd();
-                p = (List<Producto>)js.Deserialize(objText, typeof(List<Producto>));
+                p = (List<Select.Producto>)js.Deserialize(objText, typeof(List<Select.Producto>));
             }
 
             //Select Unidad Producto
@@ -190,7 +190,7 @@ namespace BARBARES_SistemaWeb.Controllers
             Stream newStream;
 
             //Select Productos por tipo
-            List<Producto> p = new List<Producto>();
+            List<Select.Producto> p = new List<Select.Producto>();
 
             Search.Producto prd = new Search.Producto()
             {
@@ -224,7 +224,7 @@ namespace BARBARES_SistemaWeb.Controllers
             {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 var objText = reader.ReadToEnd();
-                p = (List<Producto>)js.Deserialize(objText, typeof(List<Producto>));
+                p = (List<Select.Producto>)js.Deserialize(objText, typeof(List<Select.Producto>));
             }
 
             //Select Unidad Producto
@@ -344,6 +344,27 @@ namespace BARBARES_SistemaWeb.Controllers
                 ViewBag.UnidadProducto = (List<UnidadProducto>)js.Deserialize(objText, typeof(List<UnidadProducto>));
             }
 
+            //Select Moneda
+            data = encoding.GetBytes("");
+
+            webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Combo_Moneda);
+            webrequest.Method = Constantes.PostMethod;
+            webrequest.ContentType = Constantes.ContentType;
+            webrequest.ContentLength = data.Length;
+
+            newStream = webrequest.GetRequestStream();
+            newStream.Write(data, 0, data.Length);
+            newStream.Close();
+
+            webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+            using (var reader = new StreamReader(webresponse.GetResponseStream()))
+            {
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                var objText = reader.ReadToEnd();
+                ViewBag.Moneda = (List<Moneda>)js.Deserialize(objText, typeof(List<Moneda>));
+            }
+
             if (id == 1)
                 ViewBag.Title = "Cerveza";
             else if (id == 2)
@@ -376,17 +397,18 @@ namespace BARBARES_SistemaWeb.Controllers
         // POST: /Promocion/Create
 
         [HttpPost]
-        public ActionResult Create(string nombre, string desc, int unidad, int presentacion, double precio,
+        public ActionResult Create(string nombre, string desc, int unidad, int moneda, int presentacion, double precio,
             int tipo, string obs, HttpPostedFileBase file, bool perecible = false, bool estado = false)
         {
-
+            string imagen_url = "";
             if (file != null && file.ContentLength > 0)
             {
-                Debug.WriteLine("entro al if");
                 var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/App_Data"), fileName);
+                var path = Path.Combine(Server.MapPath("~/Images/barabares_img"), fileName);
                 file.SaveAs(path);
-                Debug.WriteLine("archivo guardado");
+                //var request = ControllerContext.RequestContext.HttpContext.Request;
+                string base_url = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+                imagen_url = base_url + Constantes.URL_IMAGENES_BARABARES + fileName;
             }
 
             //Declaraciones Generales para los request
@@ -410,8 +432,9 @@ namespace BARBARES_SistemaWeb.Controllers
                 Perecible = perecible,
                 Activo = estado,
                 IdTipoProducto = tipo,
+                IdMoneda = moneda,
                 FechaCreacion = DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                Imagen = "Imagen"
+                Imagen = imagen_url
             };
 
             data = encoding.GetBytes(JsonSerializer.add_Producto(p));
@@ -459,6 +482,27 @@ namespace BARBARES_SistemaWeb.Controllers
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 var objText = reader.ReadToEnd();
                 ViewBag.UnidadProducto = (List<UnidadProducto>)js.Deserialize(objText, typeof(List<UnidadProducto>));
+            }
+
+            //Select Moneda
+            data = encoding.GetBytes("");
+
+            webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Combo_Moneda);
+            webrequest.Method = Constantes.PostMethod;
+            webrequest.ContentType = Constantes.ContentType;
+            webrequest.ContentLength = data.Length;
+
+            newStream = webrequest.GetRequestStream();
+            newStream.Write(data, 0, data.Length);
+            newStream.Close();
+
+            webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+            using (var reader = new StreamReader(webresponse.GetResponseStream()))
+            {
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                var objText = reader.ReadToEnd();
+                ViewBag.Moneda = (List<Moneda>)js.Deserialize(objText, typeof(List<Moneda>));
             }
 
             if (tipo == 1)

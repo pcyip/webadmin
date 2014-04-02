@@ -75,11 +75,16 @@
 <div class="container-form">
     <div class="row">
         <div class="col-xs-2 col-md-offset-1">
-            <i class="glyphicon glyphicon-warning-sign"></i>
-            <label for="perecible">Perecible:</label>
+            <i class="glyphicon glyphicon-usd"></i>
+            <label for="moneda">Moneda:</label>
         </div>
         <div class="col-xs-3">
-            <input type="checkbox" id="perecible" name="perecible" value="true">
+            <select class="form-control" id="moneda" name="moneda">
+                @foreach (var t in ViewBag.Moneda)
+                {
+                    <option value="@t.IdMoneda">@t.Simbolo - @t.Nombre</option>            
+                }
+            </select>
         </div>
         <div class="col-xs-2">
             <i class="glyphicon glyphicon-usd"></i>
@@ -100,10 +105,11 @@
             <input type="checkbox" id="estado" name="estado" value="true">
         </div>
         <div class="col-xs-2">
-            <i class=""></i>
-            <label for="tipo"></label>
+            <i class="glyphicon glyphicon-warning-sign"></i>
+            <label for="perecible">Perecible:</label>
         </div>
         <div class="col-xs-3">
+            <input type="checkbox" id="perecible" name="perecible" value="true">
             <input type="hidden" class="form-control" id="tipo" name="tipo" value="@ViewBag.Tipo">
         </div>
     </div>

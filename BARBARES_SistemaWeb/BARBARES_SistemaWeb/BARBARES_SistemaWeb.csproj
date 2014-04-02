@@ -999,9 +999,11 @@
     <Content Include="Views\Inventario\List_Almacen.cshtml" />
     <Content Include="Views\Inventario\List_Vehiculo.cshtml" />
     <Content Include="Views\Promocion\List.cshtml" />
+    <Content Include="Views\Usuario\Select.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\barabares_img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

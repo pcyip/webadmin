@@ -93,6 +93,29 @@ namespace BARBARES_SistemaWeb.Utils
             public string Usuario { get; set; }
         }
 
+        public class Producto
+        {
+            public int IdProducto { get; set; }
+            public string Nombre { get; set; }
+            public string Descripcion { get; set; }
+            public bool Perecible { get; set; }
+            public string PrecioUnitario { get; set; }
+            public DateTime FechaCreacion { get; set; }
+            public string Presentacion { get; set; }
+            public bool Activo { get; set; }
+        }
+
+        public class Promocion
+        {
+            public int IdPromocion { get; set; }
+            public string Nombre { get; set; }
+            public string Descripcion { get; set; }
+            public DateTime FechaInicio { get; set; }
+            public DateTime FechaFin { get; set; }
+            public bool Semana { get; set; }
+            public string Precio { get; set; }
+        }
+
         public class PromocionSemana
         {
             public string Descripcion { get; set; }

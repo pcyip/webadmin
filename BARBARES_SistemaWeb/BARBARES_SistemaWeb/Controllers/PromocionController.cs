@@ -34,7 +34,7 @@ namespace BARBARES_SistemaWeb.Controllers
             byte[] data;
             Stream newStream;
 
-            List<Promocion> p = new List<Promocion>();
+            List<Select.Promocion> p = new List<Select.Promocion>();
 
             data = encoding.GetBytes("");
             
@@ -53,7 +53,7 @@ namespace BARBARES_SistemaWeb.Controllers
             {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 var objText = reader.ReadToEnd();
-                p = (List<Promocion>)js.Deserialize(objText, typeof(List<Promocion>));
+                p = (List<Select.Promocion>)js.Deserialize(objText, typeof(List<Select.Promocion>));
             }
             
             return View(p);
@@ -80,7 +80,7 @@ namespace BARBARES_SistemaWeb.Controllers
                 Hasta = DateTime.Parse(hasta)
             };
 
-            List<Promocion> p = new List<Promocion>();
+            List<Select.Promocion> p = new List<Select.Promocion>();
 
             data = encoding.GetBytes(JsonSerializer.search_Promocion(prd));
 
@@ -101,7 +101,7 @@ namespace BARBARES_SistemaWeb.Controllers
             {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 var objText = reader.ReadToEnd();
-                p = (List<Promocion>)js.Deserialize(objText, typeof(List<Promocion>));
+                p = (List<Select.Promocion>)js.Deserialize(objText, typeof(List<Select.Promocion>));
             }
 
             return View(p);
@@ -156,6 +156,27 @@ namespace BARBARES_SistemaWeb.Controllers
                 ViewBag.Productos = (List<Producto>)js.Deserialize(objText, typeof(List<Producto>));
             }
 
+            //Select Moneda
+            data = encoding.GetBytes("");
+
+            webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Combo_Moneda);
+            webrequest.Method = Constantes.PostMethod;
+            webrequest.ContentType = Constantes.ContentType;
+            webrequest.ContentLength = data.Length;
+
+            newStream = webrequest.GetRequestStream();
+            newStream.Write(data, 0, data.Length);
+            newStream.Close();
+
+            webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+            using (var reader = new StreamReader(webresponse.GetResponseStream()))
+            {
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                var objText = reader.ReadToEnd();
+                ViewBag.Moneda = (List<Moneda>)js.Deserialize(objText, typeof(List<Moneda>));
+            }
+
             return View(p);
         }
 
@@ -163,7 +184,7 @@ namespace BARBARES_SistemaWeb.Controllers
         // POST: /Promocion/Create
 
         [HttpPost]
-        public ActionResult Create(string nombrePromocion, string desc, string inicio, string fin,
+        public ActionResult Create(string nombrePromocion, string desc, string inicio, string fin, int moneda,
             string obs,int[] cantidad, int[] selectedProducts, int precio = 0, bool estadoPromocion = false, bool semana = false)
         {
             //Declaraciones Generales para los request
@@ -213,8 +234,8 @@ namespace BARBARES_SistemaWeb.Controllers
                     Descripcion = desc,
                     PrecioUnitario = precio,
                     //Observaciones = obs,
+                    IdMoneda = moneda,
                     Semana = semana,
-                    //Activo = estado,
                     FechaInicio = DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
                     FechaFin= DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
                     Imagen = "Imagen"
@@ -289,7 +310,7 @@ namespace BARBARES_SistemaWeb.Controllers
                         i++;
                     }
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("List");
                 }
                 else
                 {
@@ -335,6 +356,27 @@ namespace BARBARES_SistemaWeb.Controllers
             ViewBag.Productos = sp;
 
             Session["selectedProducts"] = p;
+
+            //Select Moneda
+            data = encoding.GetBytes("");
+
+            webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Combo_Moneda);
+            webrequest.Method = Constantes.PostMethod;
+            webrequest.ContentType = Constantes.ContentType;
+            webrequest.ContentLength = data.Length;
+
+            newStream = webrequest.GetRequestStream();
+            newStream.Write(data, 0, data.Length);
+            newStream.Close();
+
+            webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+            using (var reader = new StreamReader(webresponse.GetResponseStream()))
+            {
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                var objText = reader.ReadToEnd();
+                ViewBag.Moneda = (List<Moneda>)js.Deserialize(objText, typeof(List<Moneda>));
+            }
 
             return View(p);
         }

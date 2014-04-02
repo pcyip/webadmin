@@ -74,11 +74,16 @@
     <div class="container-form">
         <div class="row">
             <div class="col-xs-2 col-md-offset-1">
-                <i class="glyphicon glyphicon-warning-sign"></i>
-                <label for="semana">Semana:</label>
+                <i class="glyphicon glyphicon-usd"></i>
+                <label for="moneda">Moneda:</label>
             </div>
             <div class="col-xs-3">
-                <input type="checkbox" id="semana" name="semana" value="true">
+                <select class="form-control" id="moneda" name="moneda">
+                    @foreach (var t in ViewBag.Moneda)
+                    {
+                        <option value="@t.IdMoneda">@t.Simbolo - @t.Nombre</option>            
+                    }
+                </select>
             </div>
             <div class="col-xs-2">
                 <i class="glyphicon glyphicon-usd"></i>
@@ -97,6 +102,13 @@
             </div>
             <div class="col-xs-3">
                 <input type="checkbox" id="estadoPromocion" name="estadoPromocion" value="true">
+            </div>
+            <div class="col-xs-2">
+                <i class="glyphicon glyphicon-warning-sign"></i>
+                <label for="semana">Semana:</label>
+            </div>
+            <div class="col-xs-3">
+                <input type="checkbox" id="semana" name="semana" value="true">
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-﻿@model List<BARBARES_SistemaWeb.Models.Promocion>
+﻿@model List<BARBARES_SistemaWeb.Utils.Select.Promocion>
 
 @{
     ViewBag.Title = "Promociones";
@@ -86,14 +86,14 @@
             <label for="desde">Desde:</label>
         </div>
         <div class="col-xs-3">
-            <input type="date" class="form-control" id="desde" name="desde">
+            <input type="date" class="form-control" id="desde" name="desde" required>
         </div>
         <div class="col-xs-2">
             <i class="glyphicon glyphicon-calendar"></i>
             <label for="hasta">Hasta:</label>
         </div>
         <div class="col-xs-3">
-            <input type="date" class="form-control" id="hasta" name="hasta">
+            <input type="date" class="form-control" id="hasta" name="hasta" required>
         </div>
     </div>
 </div>
@@ -109,6 +109,7 @@
         <tr>
             <th>#</th>
             <th>Nombre</th>
+            <th>Descripción</th>
             <th>Semana</th>
             <th>Precio</th>
             <th>Inicio</th>
@@ -122,6 +123,7 @@
             <tr>
                 <td>@p.IdPromocion</td>
                 <td>@p.Nombre</td>
+                <td>@p.Descripcion</td>
                 @if (p.Semana == true)
                 {
                     <td>Sí</td>
@@ -129,7 +131,7 @@
                 else{
                     <td>No</td>
                 }
-                <td>@p.PrecioUnitario</td>
+                <td>@p.Precio</td>
                 <td>@p.FechaInicio</td>
                 <td>@p.FechaFin</td>
                 <td><a class="btn btn-xs btn-success" role="button" href="~/Promocion/Details">Detalle &raquo;</a></td>

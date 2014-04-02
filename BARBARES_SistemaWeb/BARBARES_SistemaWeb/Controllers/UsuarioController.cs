@@ -25,6 +25,18 @@ namespace BARBARES_SistemaWeb.Controllers
             return View();
         }
 
+        public ActionResult Select()
+        {
+            List<Perfil> p = (List<Perfil>)TempData["Perfiles"];
+            return View(p);
+        }
+
+        [HttpPost]
+        public ActionResult Select(int perfil)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult Login()
         {
             ViewBag.Mensaje = null;
@@ -68,6 +80,35 @@ namespace BARBARES_SistemaWeb.Controllers
                 Response.Cookies.Add(cookie);
 
                 Session["token"] = u.Mensaje;
+
+                //Select Perfiles
+                List<Perfil> p = new List<Perfil>();
+
+                data = encoding.GetBytes(JsonSerializer.selectByUsuario_Sistema_Perfil(usuario));
+
+                webrequest = (HttpWebRequest)WebRequest.Create(Constantes.SelectByUsuario_Sistema_Perfil);
+                webrequest.Method = Constantes.PostMethod;
+                webrequest.ContentType = Constantes.ContentType;
+                webrequest.ContentLength = data.Length;
+
+                newStream = webrequest.GetRequestStream();
+                newStream.Write(data, 0, data.Length);
+                newStream.Close();
+
+                webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+                using (var reader = new StreamReader(webresponse.GetResponseStream()))
+                {
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    var objText = reader.ReadToEnd();
+                    p = (List<Perfil>)js.Deserialize(objText, typeof(List<Perfil>));
+                }
+
+                if (p.Count > 1)
+                {
+                    TempData["Perfiles"] = p;
+                    return RedirectToAction("Select");
+                }
 
                 return RedirectToAction("Index", "Home");
             }
