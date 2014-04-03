@@ -422,9 +422,6 @@ namespace BARBARES_SistemaWeb.Controllers
                     imagen_url = base_url + Constantes.URL_IMAGENES_BARABARES + fileName;
                 }
 
-                Debug.WriteLine(imagen_url);
-                Debug.WriteLine(moneda);
-
                 p = new Producto()
                 {
                     IdProducto = 0,
@@ -505,6 +502,8 @@ namespace BARBARES_SistemaWeb.Controllers
                     var objText = reader.ReadToEnd();
                     u = (ResponseBD)js.Deserialize(objText, typeof(ResponseBD));
                 }
+
+                return RedirectToAction("Index");
             }
 
             //Select Unidad Producto
