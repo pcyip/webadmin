@@ -394,23 +394,11 @@ namespace BARBARES_SistemaWeb.Controllers
         }
 
         //
-        // POST: /Promocion/Create
 
         [HttpPost]
         public ActionResult Create(string nombre, string desc, int unidad, int moneda, int presentacion, double precio,
             int tipo, string obs, HttpPostedFileBase file, bool perecible = false, bool estado = false)
         {
-            string imagen_url = "";
-            if (file != null && file.ContentLength > 0)
-            {
-                var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/Images/barabares_img"), fileName);
-                file.SaveAs(path);
-                //var request = ControllerContext.RequestContext.HttpContext.Request;
-                string base_url = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
-                imagen_url = base_url + Constantes.URL_IMAGENES_BARABARES + fileName;
-            }
-
             //Declaraciones Generales para los request
 
             ASCIIEncoding encoding = new ASCIIEncoding();
@@ -419,48 +407,104 @@ namespace BARBARES_SistemaWeb.Controllers
             byte[] data;
             Stream newStream;
             ResponseBD u = new ResponseBD();
+            Producto p = new Producto();
 
-            Producto p = new Producto()
+            try
             {
-                IdProducto = 0,
-                Nombre = nombre,
-                Descripcion = desc,
-                IdUnidadProducto = unidad,
-                Presentacion = presentacion,
-                PrecioUnitario = precio,
-                Observaciones = obs,
-                Perecible = perecible,
-                Activo = estado,
-                IdTipoProducto = tipo,
-                IdMoneda = moneda,
-                FechaCreacion = DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                Imagen = imagen_url
-            };
+                string imagen_url = "";
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Images/barabares_img"), fileName);
+                    file.SaveAs(path);
+                    //var request = ControllerContext.RequestContext.HttpContext.Request;
+                    string base_url = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+                    imagen_url = base_url + Constantes.URL_IMAGENES_BARABARES + fileName;
+                }
 
-            data = encoding.GetBytes(JsonSerializer.add_Producto(p));
+                Debug.WriteLine(imagen_url);
+                Debug.WriteLine(moneda);
 
-            webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Add_Producto);
-            webrequest.Method = Constantes.PostMethod;
-            webrequest.ContentType = Constantes.ContentType;
-            webrequest.ContentLength = data.Length;
+                p = new Producto()
+                {
+                    IdProducto = 0,
+                    Nombre = nombre,
+                    Descripcion = desc,
+                    IdUnidadProducto = unidad,
+                    Presentacion = presentacion,
+                    PrecioUnitario = precio,
+                    Observaciones = obs,
+                    Perecible = perecible,
+                    Activo = estado,
+                    IdTipoProducto = tipo,
+                    IdMoneda = moneda,
+                    FechaCreacion = DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    Imagen = imagen_url
+                };
 
-            newStream = webrequest.GetRequestStream();
-            newStream.Write(data, 0, data.Length);
-            newStream.Close();
+                data = encoding.GetBytes(JsonSerializer.add_Producto(p));
 
-            webresponse = (HttpWebResponse)webrequest.GetResponse();
+                Debug.WriteLine(JsonSerializer.add_Producto(p));
 
-            using (var reader = new StreamReader(webresponse.GetResponseStream()))
-            {
-                JavaScriptSerializer js = new JavaScriptSerializer();
-                var objText = reader.ReadToEnd();
-                u = (ResponseBD)js.Deserialize(objText, typeof(ResponseBD));
+                webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Add_Producto);
+                webrequest.Method = Constantes.PostMethod;
+                webrequest.ContentType = Constantes.ContentType;
+                webrequest.ContentLength = data.Length;
+
+                newStream = webrequest.GetRequestStream();
+                newStream.Write(data, 0, data.Length);
+                newStream.Close();
+
+                webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+                using (var reader = new StreamReader(webresponse.GetResponseStream()))
+                {
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    var objText = reader.ReadToEnd();
+                    u = (ResponseBD)js.Deserialize(objText, typeof(ResponseBD));
+                }
+
+                if (u.Flujo.Equals(Constantes.OK))
+                {
+                    int id = Int32.Parse(u.Mensaje);
+                    return RedirectToAction("Index");
+                }
             }
-
-            if (u.Flujo.Equals(Constantes.OK))
+            catch (Exception ex)
             {
-                int id = Int32.Parse(u.Mensaje);
-                return RedirectToAction("Index");
+                LogBarabares b = new LogBarabares()
+                {
+                    Accion = Constantes.LOG_CREAR,
+                    Servicio = Constantes.Add_Producto,
+                    Input = JsonSerializer.add_Producto(p),
+                    Descripcion = ex.ToString(),
+                    Clase = (p == null) ? "null" : p.GetType().Name,
+                    Aplicacion = Constantes.ENTORNO_SISTEMA,
+                    Estado = Constantes.ERROR,
+                    Ip = "",
+                    IdUsuario = 1 //TODO: obtener usuario de la sesión
+
+                };
+
+                data = encoding.GetBytes(JsonSerializer.add_LogBarabares(b));
+
+                webrequest = (HttpWebRequest)WebRequest.Create(Constantes.Add_LogBarabares);
+                webrequest.Method = Constantes.PostMethod;
+                webrequest.ContentType = Constantes.ContentType;
+                webrequest.ContentLength = data.Length;
+
+                newStream = webrequest.GetRequestStream();
+                newStream.Write(data, 0, data.Length);
+                newStream.Close();
+
+                webresponse = (HttpWebResponse)webrequest.GetResponse();
+
+                using (var reader = new StreamReader(webresponse.GetResponseStream()))
+                {
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    var objText = reader.ReadToEnd();
+                    u = (ResponseBD)js.Deserialize(objText, typeof(ResponseBD));
+                }
             }
 
             //Select Unidad Producto

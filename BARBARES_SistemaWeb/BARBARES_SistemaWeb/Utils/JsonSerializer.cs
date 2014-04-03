@@ -427,6 +427,22 @@ namespace BARBARES_SistemaWeb.Utils
                 "}";
         }
 
+        public static string add_LogBarabares(LogBarabares p)
+        {
+            return "{" +
+                '"' + "IdUsuario" + '"' + ": " + p.IdUsuario.ToString() + ',' +
+                '"' + "Accion" + '"' + ": " + '"' + p.Accion + '"' + ',' +
+                '"' + "Servicio" + '"' + ": " + '"' + p.Servicio + '"' + ',' +
+                '"' + "Input" + '"' + ": " + '"' + p.Input + '"' + ',' +
+                '"' + "Descripcion" + '"' + ": " + '"' + p.Descripcion + '"' + ',' +
+                '"' + "Clase" + '"' + ": " + '"' + p.Clase + '"' + ',' +
+                '"' + "Aplicacion" + '"' + ": " + '"' + p.Aplicacion + '"' + ',' +
+                '"' + "Estado" + '"' + ": " + '"' + p.Estado + '"' + ',' +
+                '"' + "Fecha" + '"' + ": " + '"' + Utils.dateToJson(p.Fecha) + '"' + ',' +
+                '"' + "Ip" + '"' + ": " + '"' + p.Ip + '"' +
+                "}";
+        }
+
         #endregion
 
         #region Vehiculo
