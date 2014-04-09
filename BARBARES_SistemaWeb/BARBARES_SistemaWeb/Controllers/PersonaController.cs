@@ -139,6 +139,8 @@ namespace BARBARES_SistemaWeb.Controllers
                 ViewBag.TipoDocumento = (List<TipoDocumento>)js.Deserialize(objText, typeof(List<TipoDocumento>));
             }
 
+            Debug.WriteLine(p.Count, "cant");
+
             if (idTipo == 1)
                 ViewBag.Title = "Clientes";
             else if (idTipo == 2)
@@ -253,11 +255,14 @@ namespace BARBARES_SistemaWeb.Controllers
             return View();
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int idTipo, int id)
         {
-            if (id == 1)
+            Debug.WriteLine(id, "id");
+            Debug.WriteLine(idTipo, "tipo");
+
+            if (idTipo == 1)
                 ViewBag.Title = "Clientes";
-            else if (id == 2)
+            else if (idTipo == 2)
                 ViewBag.Title = "Empleados";
 
             ViewBag.Tipo = id;
